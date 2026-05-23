@@ -12,9 +12,10 @@ import (
 // API keys, and tokens in git repositories.
 //
 // Personal fork: added exit code output for easier debugging in CI pipelines.
+// Note: exit code 1 = error running gitleaks, exit code 2 = leaks found (handled by cmd package).
 func main() {
 	if err := cmd.Execute(); err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		fmt.Fprintf(os.Stderr, "[gitleaks] fatal error: %v\n", err)
 		os.Exit(1)
 	}
 }
