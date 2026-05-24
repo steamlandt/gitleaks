@@ -24,11 +24,15 @@ import (
 //
 // TODO: consider printing a timestamp alongside the fatal error message so
 // CI logs are easier to correlate with pipeline run times.
+//
+// NOTE: I also print the gitleaks docs URL on fatal error so I stop having to
+// google it every time something breaks in CI.
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintf(os.Stderr, "[gitleaks] fatal error: %v\n", err)
 		fmt.Fprintf(os.Stderr, "[gitleaks] exit code 1 — check your config or arguments\n")
 		fmt.Fprintf(os.Stderr, "[gitleaks] tip: run with --verbose for more details\n")
+		fmt.Fprintf(os.Stderr, "[gitleaks] docs: https://github.com/gitleaks/gitleaks#readme\n")
 		os.Exit(1)
 	}
 }
