@@ -33,6 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "[gitleaks] exit code 1 — check your config or arguments\n")
 		fmt.Fprintf(os.Stderr, "[gitleaks] tip: run with --verbose for more details\n")
 		fmt.Fprintf(os.Stderr, "[gitleaks] tip: validate your config with 'gitleaks validate'\n")
+		fmt.Fprintf(os.Stderr, "[gitleaks] tip: check GITLEAKS_CONFIG env var if using a custom config file\n")
 		fmt.Fprintf(os.Stderr, "[gitleaks] docs: https://github.com/gitleaks/gitleaks#readme\n")
 		os.Exit(1)
 	}
