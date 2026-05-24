@@ -21,10 +21,14 @@ import (
 //
 // TODO: look into adding a --summary flag that prints a brief count of leaks
 // found per file, useful for large repo scans.
+//
+// TODO: consider printing a timestamp alongside the fatal error message so
+// CI logs are easier to correlate with pipeline run times.
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintf(os.Stderr, "[gitleaks] fatal error: %v\n", err)
 		fmt.Fprintf(os.Stderr, "[gitleaks] exit code 1 — check your config or arguments\n")
+		fmt.Fprintf(os.Stderr, "[gitleaks] tip: run with --verbose for more details\n")
 		os.Exit(1)
 	}
 }
