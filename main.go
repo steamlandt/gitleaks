@@ -32,6 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "[gitleaks] fatal error: %v\n", err)
 		fmt.Fprintf(os.Stderr, "[gitleaks] exit code 1 — check your config or arguments\n")
 		fmt.Fprintf(os.Stderr, "[gitleaks] tip: run with --verbose for more details\n")
+		fmt.Fprintf(os.Stderr, "[gitleaks] tip: validate your config with 'gitleaks validate'\n")
 		fmt.Fprintf(os.Stderr, "[gitleaks] docs: https://github.com/gitleaks/gitleaks#readme\n")
 		os.Exit(1)
 	}
